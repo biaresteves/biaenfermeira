@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog - Enfermagem & Ozonioterapia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #fce1ff);
+      color: #333;
+      line-height: 1.6;
+      padding: 0 20px;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Side Icons */
+    .side-icons {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 1000;
+    }
+
+    .side-icons.left {
+      left: 10px;
+    }
+
+    .side-icons.right {
+      right: 10px;
+    }
+
+    .side-icons a {
+      background: #d63384;
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(214, 51, 132, 0.5);
+      transition: background 0.3s ease;
+    }
+
+    .side-icons a:hover {
+      background: #bf2a73;
+    }
+
+    .side-icons svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 80px auto 40px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(214, 51, 132, 0.15);
+      padding: 40px 30px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header img.profile-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      margin: 0 auto 20px;
+      box-shadow: 0 0 15px rgba(214, 51, 132, 0.5);
+      border: 4px solid #d63384;
+      display: block;
+    }
+
+    header h1 {
+      color: #d63384;
+      font-weight: 700;
+      font-size: 2.8rem;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: #a02a65;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    /* Blog Posts */
+    article {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #f2c3d7;
+      padding-bottom: 30px;
+    }
+
+    article:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    article h2 {
+      color: #d63384;
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    article time {
+      color: #bf2a73;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    article p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #a02a65;
+      font-weight: 500;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        margin: 100px 10px 40px;
+        padding: 30px 20px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header img.profile-photo {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Left Side Icons -->
+  <div class="side-icons left">
+    <a href="https://www.instagram.com/_biancaesteves" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm4.75-.25a1 1 0 110 2 1 1 0 010-2z"></path>
+      </svg>
+    </a>
+    <a href="https://wa.me/5511913511919" target="_blank" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.52 3.48A11.82 11.82 0 0012 0C5.372 0 0 5.372 0 12a11.92 11.92 0 001.669 6.031L0 24l6.125-1.644A11.92 11.92 0 0012 24c6.628 0 12-5.372 12-12 0-3.202-1.263-6.21-3.48-8.52zm-8.5 17.5a7.937 7.937 0 01-4.286-1.3l-.308-.184-3.64.979.973-3.55-.2-.315A7.957 7.957 0 014.5 11.5c0-4.14 3.36-7.5 7.5-7.5a7.44 7.44 0 015.318 2.2 7.444 7.444 0 012.183 5.3c0 4.14-3.36 7.5-7.5 7.5zm4.19-5.21l-1.2-.58c-.163-.077-.356-.056-.49.056l-.82.73a8.692 8.692 0 01-3.93-2.4 8.334 8.334 0 01-1.54-2.067l-.14-.24a.563.563 0 01.057-.54l1.03-1.58c.142-.212.04-.504-.235-.6l-1.655-.6a.51.51 0 00-.6.15c-.71.98-1.08 2.128-1.08 3.328a6.67 6.67 0 006.71 6.71c1.06 0 2.04-.294 2.89-.83a.52.52 0 00.18-.59l-.6-1.52a.5.5 0 00-.53-.3z"></path>
+      </svg>
+    </a>
+  </div>
+
+  <div class="container">
+    <header>
+      <img src="img/biaesteves.jpg" alt="foto da bianca" class="profile-photo" />
+      <h1>Blog da Enfermeira Bianca - Ozonioterapia e Saúde</h1>
+      <p>Informação, dicas e novidades sobre tratamentos naturais e inovadores para seu bem-estar.</p>
+    </header>
+
+    <article>
+      <h2>O que é Ozonioterapia?</h2>
+      <time datetime="2025-06-12">12 de Junho de 2025</time>
+      <p>A ozonioterapia é um tratamento que utiliza uma mistura de oxigênio e ozônio para estimular a circulação sanguínea, aumentar a oxigenação dos tecidos e fortalecer o sistema imunológico. É uma técnica natural que ajuda na recuperação de diversas doenças, melhora a qualidade de vida e acelera a cicatrização.</p>

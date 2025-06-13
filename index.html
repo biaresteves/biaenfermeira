@@ -1,196 +1,824 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang=”pt-BR”>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <meta charset=”UTF-8” />
+
+  <meta name=”viewport” content=”width=device-width, initial-scale=1” />
+
   <title>Enfermagem & Ozonioterapia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link href=https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap rel=”stylesheet” />
+
   <style>
+
     /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+
+•	{
+
+      Margin: 0;
+
+      Padding: 0;
+
+      Box-sizing: border-box;
+
     }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ffe6f0, #fce1ff);
-      color: #333;
-      line-height: 1.6;
-      padding: 0 20px;
-      min-height: 100vh;
-      position: relative;
+
+
+    Body {
+
+      Font-family: ‘Poppins’, sans-serif;
+
+      Background: linear-gradient(135deg, #ffe6f0, #fce1ff);
+
+      Color: #333;
+
+      Line-height: 1.6;
+
+      Padding-top: 100px; /* Adicionado para criar espaço para o cabeçalho fixo */
+
+      Min-height: 100vh;
+
+      Position: relative;
+
     }
+
+
 
     /* Side Icons */
+
     .side-icons {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+
+      Position: fixed;
+
+      Top: 50%;
+
+      Transform: translateY(-50%);
+
+      Display: flex;
+
+      Flex-direction: column;
+
+      Gap: 20px;
+
       z-index: 1000;
+
     }
+
+
 
     .side-icons.left {
-      left: 10px;
+
+      Left: 10px;
+
     }
+
+
 
     .side-icons.right {
-      right: 10px;
+
+      Right: 10px;
+
     }
+
+
 
     .side-icons a {
-      background: #d63384;
-      color: white;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      box-shadow: 0 4px 8px rgba(214, 51, 132, 0.5);
-      transition: background 0.3s ease;
+
+      Background: #d63384;
+
+      Color: white;
+
+      Width: 48px;
+
+      Height: 48px;
+
+      Border-radius: 50%;
+
+      Display: flex;
+
+      Align-items: center;
+
+      Justify-content: center;
+
+      Text-decoration: none;
+
+      Box-shadow: 0 4px 8px rgba(214, 51, 132, 0.5);
+
+      Transition: background 0.3s ease;
+
     }
+
+
 
     .side-icons a:hover {
-      background: #bf2a73;
+
+      Background: #bf2a73;
+
     }
+
+
 
     .side-icons svg {
-      width: 24px;
-      height: 24px;
-      fill: white;
+
+      Width: 24px;
+
+      Height: 24px;
+
+      Fill: white;
+
     }
 
-    /* Container */
+
+
+    /* Fixed Header Styles */
+
+    .fixed-header {
+
+      Position: fixed; /* Torna o cabeçalho fixo */
+
+      Top: 0;
+
+      Left: 0;
+
+      Width: 100%;
+
+      Background: white;
+
+      Box-shadow: 0 4px 15px rgba(214, 51, 132, 0.1);
+
+      z-index: 999; /* Garante que fique acima de outros conteúdos */
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center; /* Centraliza o conteúdo horizontalmente */
+
+      padding: 10px 20px;
+
+      height: 80px; /* Altura do cabeçalho fixo */
+
+      text-align: center; /* Para centralizar o texto dentro do cabeçalho, se houver */
+
+    }
+
+
+
+    .fixed-header .profile-photo-mini {
+
+      Width: 60px; /* Tamanho menor para a foto no cabeçalho fixo */
+
+      Height: 60px;
+
+      Border-radius: 50%;
+
+      Object-fit: cover;
+
+      Object-position: center top;
+
+      Border: 3px solid #d63384;
+
+      Box-shadow: 0 0 8px rgba(214, 51, 132, 0.4);
+
+      Margin-right: 15px; /* Espaçamento entre a foto e o título */
+
+    }
+
+
+
+    .fixed-header h1 {
+
+      Color: #d63384;
+
+      Font-weight: 700;
+
+      Font-size: 1.8rem; /* Tamanho do título no cabeçalho fixo */
+
+      Margin: 0; /* Remove margens padrão */
+
+      Line-height: 1.2;
+
+    }
+
+
+
+    /* Container – ajustado para o cabeçalho fixo */
+
     .container {
-      max-width: 900px;
-      margin: 80px auto 40px;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(214, 51, 132, 0.15);
-      padding: 40px 30px;
+
+      Max-width: 900px;
+
+      Margin: 20px auto 40px; /* Ajuste na margem superior */
+
+      Background: white;
+
+      Border-radius: 20px;
+
+      Box-shadow: 0 8px 30px rgba(214, 51, 132, 0.15);
+
+      Padding: 40px 30px;
+
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 40px;
+
+
+    /* Removido o estilo de header anterior, pois agora temos o fixed-header */
+
+    /* header {
+
+      Text-align: center;
+
+      Margin-bottom: 40px;
+
+    } */
+
+
+
+    /* Removido o estilo da foto de perfil grande, pois será usada no fixed-header */
+
+    /* header img.profile-photo {
+
+      Width: 140px;
+
+      Height: 140px;
+
+      Border-radius: 50%;
+
+      Object-fit: cover;
+
+      Object-position: center top;
+
+      Margin: 0 auto 20px;
+
+      Box-shadow: 0 0 15px rgba(214, 51, 132, 0.5);
+
+      Border: 4px solid #d63384;
+
+      Display: block;
+
+    } */
+
+
+
+    /* Os estilos de h1 e p dentro do header principal foram movidos/ajustados para o fixed-header */
+
+    /* header h1 {
+
+      Color: #d63384;
+
+      Font-weight: 700;
+
+      Font-size: 2.8rem;
+
+      Margin-bottom: 8px;
+
     }
 
-    header img.profile-photo {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      margin: 0 auto 20px;
-      box-shadow: 0 0 15px rgba(214, 51, 132, 0.5);
-      border: 4px solid #d63384;
-      display: block;
-    }
 
-    header h1 {
-      color: #d63384;
-      font-weight: 700;
-      font-size: 2.8rem;
-      margin-bottom: 8px;
-    }
 
-    header p {
-      color: #a02a65;
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
+    Header p {
+
+      Color: #a02a65;
+
+      Font-size: 1.1rem;
+
+      Font-weight: 500;
+
+    } */
+
+
 
     /* Blog Posts */
-    article {
-      margin-bottom: 40px;
-      border-bottom: 1px solid #f2c3d7;
-      padding-bottom: 30px;
+
+    Article {
+
+      Margin-bottom: 40px;
+
+      Border-bottom: 1px solid #f2c3d7;
+
+      Padding-bottom: 30px;
+
     }
 
-    article:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
+
+
+    Article:last-child {
+
+      Border-bottom: none;
+
+      Padding-bottom: 0;
+
     }
 
-    article h2 {
-      color: #d63384;
-      font-weight: 600;
-      font-size: 1.8rem;
-      margin-bottom: 12px;
+
+
+    Article h2 {
+
+      Color: #d63384;
+
+      Font-weight: 600;
+
+      Font-size: 1.8rem;
+
+      Margin-bottom: 12px;
+
     }
 
-    article time {
-      color: #bf2a73;
-      font-size: 0.9rem;
-      font-weight: 500;
-      margin-bottom: 15px;
-      display: block;
+
+
+    Article time {
+
+      Color: #bf2a73;
+
+      Font-size: 0.9rem;
+
+      Font-weight: 500;
+
+      Margin-bottom: 15px;
+
+      Display: block;
+
     }
 
-    article p {
-      font-size: 1rem;
-      color: #444;
-      line-height: 1.5;
+
+
+    Article p {
+
+      Font-size: 1rem;
+
+      Color: #444;
+
+      Line-height: 1.5;
+
     }
+
+
+
+    /* New Services Section Styles */
+
+    .services-section {
+
+      Margin-top: 40px;
+
+      Padding-top: 40px;
+
+      Border-top: 1px solid #f2c3d7;
+
+    }
+
+
+
+    .services-section h2 {
+
+      Color: #d63384;
+
+      Font-weight: 600;
+
+      Font-size: 2rem;
+
+      Text-align: center;
+
+      Margin-bottom: 30px;
+
+    }
+
+
+
+    .service-item {
+
+      Background: #fff5f8;
+
+      Border-radius: 15px;
+
+      Padding: 25px;
+
+      Margin-bottom: 20px;
+
+      Box-shadow: 0 4px 15px rgba(214, 51, 132, 0.08);
+
+      Transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    }
+
+
+
+    .service-item:hover {
+
+      Transform: translateY(-5px);
+
+      Box-shadow: 0 6px 20px rgba(214, 51, 132, 0.15);
+
+    }
+
+
+
+    .service-item h3 {
+
+      Color: #bf2a73;
+
+      Font-size: 1.4rem;
+
+      Margin-bottom: 10px;
+
+    }
+
+
+
+    .service-item p {
+
+      Font-size: 0.95rem;
+
+      Color: #555;
+
+      Line-height: 1.6;
+
+    }
+
+
+
+    .service-item ul {
+
+      List-style: none;
+
+      Margin-top: 15px;
+
+      Padding-left: 0;
+
+    }
+
+
+
+    .service-item ul li {
+
+      Margin-bottom: 8px;
+
+      Color: #666;
+
+      Font-size: 0.9rem;
+
+      Position: relative;
+
+      Padding-left: 20px;
+
+    }
+
+
+
+    .service-item ul li:before {
+
+      Content: ‘✓’; /* Or any other checkmark icon */
+
+      Color: #d63384;
+
+      Position: absolute;
+
+      Left: 0;
+
+      Font-weight: bold;
+
+    }
+
+
+
+
+
+    /* Call to Action Button */
+
+    .cta-button-wrapper {
+
+      Text-align: center;
+
+      Margin-top: 30px;
+
+    }
+
+
+
+    .cta-button {
+
+      Display: inline-block;
+
+      Background: #d63384;
+
+      Color: white;
+
+      Padding: 15px 30px;
+
+      Border-radius: 30px;
+
+      Text-decoration: none;
+
+      Font-weight: 600;
+
+      Font-size: 1.1rem;
+
+      Box-shadow: 0 4px 15px rgba(214, 51, 132, 0.4);
+
+      Transition: background 0.3s ease, transform 0.3s ease;
+
+    }
+
+
+
+    .cta-button:hover {
+
+      Background: #bf2a73;
+
+      Transform: translateY(-2px);
+
+    }
+
+
+
+
 
     /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #a02a65;
-      font-weight: 500;
-      margin-top: 40px;
+
+    Footer {
+
+      Text-align: center;
+
+      Padding: 20px;
+
+      Font-size: 0.9rem;
+
+      Color: #a02a65;
+
+      Font-weight: 500;
+
+      Margin-top: 40px;
+
     }
+
+
 
     /* Responsive */
+
     @media (max-width: 600px) {
+
+      Body {
+
+        Padding-top: 80px; /* Ajuste para dispositivos menores */
+
+      }
+
+      .fixed-header {
+
+        Height: 70px; /* Altura menor para o cabeçalho em mobile */
+
+        Padding: 5px 15px;
+
+      }
+
+
+
+      .fixed-header .profile-photo-mini {
+
+        Width: 50px;
+
+        Height: 50px;
+
+        Margin-right: 10px;
+
+      }
+
+
+
+      .fixed-header h1 {
+
+        Font-size: 1.4rem;
+
+      }
+
+
+
       .container {
-        margin: 100px 10px 40px;
-        padding: 30px 20px;
+
+        Margin: 20px 10px 40px;
+
+        Padding: 30px 20px;
+
       }
 
-      header h1 {
-        font-size: 2rem;
+
+
+      /* Removido o estilo de header h1 e foto de perfil grande, pois não são mais usados no corpo principal */
+
+      /* header h1 {
+
+        Font-size: 2rem;
+
       }
 
-      header img.profile-photo {
-        width: 100px;
-        height: 100px;
+
+
+      Header img.profile-photo {
+
+        Width: 100px;
+
+        Height: 100px;
+
+      } */
+
+
+
+      .services-section h2 {
+
+        Font-size: 1.6rem;
+
       }
+
+
+
+      .service-item {
+
+        Padding: 20px;
+
+      }
+
+
+
+      .service-item h3 {
+
+        Font-size: 1.2rem;
+
+      }
+
+
+
+      .cta-button {
+
+        Padding: 12px 25px;
+
+        Font-size: 1rem;
+
+      }
+
     }
+
   </style>
+
 </head>
+
 <body>
 
-  <!-- Left Side Icons -->
-  <div class="side-icons left">
-    <a href="https://www.instagram.com/_biancaesteves" target="_blank" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm4.75-.25a1 1 0 110 2 1 1 0 010-2z"></path>
-      </svg>
-    </a>
-    <a href="https://wa.me/5511913511919" target="_blank" aria-label="WhatsApp">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M20.52 3.48A11.82 11.82 0 0012 0C5.372 0 0 5.372 0 12a11.92 11.92 0 001.669 6.031L0 24l6.125-1.644A11.92 11.92 0 0012 24c6.628 0 12-5.372 12-12 0-3.202-1.263-6.21-3.48-8.52zm-8.5 17.5a7.937 7.937 0 01-4.286-1.3l-.308-.184-3.64.979.973-3.55-.2-.315A7.957 7.957 0 014.5 11.5c0-4.14 3.36-7.5 7.5-7.5a7.44 7.44 0 015.318 2.2 7.444 7.444 0 012.183 5.3c0 4.14-3.36 7.5-7.5 7.5zm4.19-5.21l-1.2-.58c-.163-.077-.356-.056-.49.056l-.82.73a8.692 8.692 0 01-3.93-2.4 8.334 8.334 0 01-1.54-2.067l-.14-.24a.563.563 0 01.057-.54l1.03-1.58c.142-.212.04-.504-.235-.6l-1.655-.6a.51.51 0 00-.6.15c-.71.98-1.08 2.128-1.08 3.328a6.67 6.67 0 006.71 6.71c1.06 0 2.04-.294 2.89-.83a.52.52 0 00.18-.59l-.6-1.52a.5.5 0 00-.53-.3z"></path>
-      </svg>
-    </a>
+
+
+  <div class=”fixed-header”>
+
+    <img src=”Img/biaesteves.jpg” alt=”foto da bianca” class=”profile-photo-mini” />
+
+    <h1>Enfermeira Bianca Rodrigues Esteves</h1>
+
   </div>
 
-  <div class="container">
-    <header>
-      <img src="Img/biaesteves.jpg" alt="foto da bianca" class="profile-photo" />
-      <h1>Enfermeira Bianca Rodrigues Esteves - Ozonioterapia e Saúde</h1>
-      <p>Informação, dicas e novidades sobre tratamentos naturais e inovadores para seu bem-estar.</p>
-    </header>
+
+
+  <div class=”side-icons left”>
+
+    <a href=https://www.instagram.com/_biancaesteves target=”_blank” aria-label=”Instagram”>
+
+      <svg viewBox=”0 0 24 24” aria-hidden=”true”>
+
+        <path d=”M7.75 2h8.5ª5.75 5.75 0 0122 7.75v8.5ª5.75 5.75 0 0116.25 22h-8.5ª5.75 5.75 0 012 16.25v-8.5ª5.75 5.75 0 017.75 2zm0 1.5ª4.25 4.25 0 003.5 7.75v8.5ª4.25 4.25 0 007.75 20.5h8.5ª4.25 4.25 0 004.25-4.25v-8.5ª4.25 4.25 0 0016.25 3.5h-8.5zM12 7ª5 5 0 110 10 5 5 0 010-10zm0 1.5ª3.5 3.5 0 100 7 3.5 3.5 0 000-7zm4.75-.25ª1 1 0 110 2 1 1 0 010-2z”></path>
+
+      </svg>
+
+    </a>
+
+    <a href=https://wa.me/5511913511919 target=”_blank” aria-label=”WhatsApp”>
+
+      <svg viewBox=”0 0 24 24” aria-hidden=”true”>
+
+        <path d=”M20.52 3.48ª11.82 11.82 0 0012 0C5.372 0 0 5.372 0 12ª11.92 11.92 0 001.669 6.031L0 24l6.125-1.644ª11.92 11.92 0 0012 24c6.628 0 12-5.372 12-12 0-3.202-1.263-6.21-3.48-8.52zm-8.5 17.5ª7.937 7.937 0 01-4.286-1.3l-.308-.184-3.64.979.973-3.55-.2-.315ª7.957 7.957 0 014.5 11.5c0-4.14 3.36-7.5 7.5-7.5ª7.44 7.44 0 015.318 2.2 7.444 7.444 0 012.183 5.3c0 4.14-3.36 7.5-7.5 7.5zm4.19-5.21l-1.2-.58c-.163-.077-.356-.056-.49.056l-.82.73ª8.692 8.692 0 01-3.93-2.4 8.334 8.334 0 01-1.54-2.067l-.14-.24ª.563.563 0 01.057-.54l1.03-1.58c.142-.212.04-.504-.235-.6l-1.655-.6ª.51.51 0 00-.6.15c-.71.98-1.08 2.128-1.08 3.328ª6.67 6.67 0 006.71 6.71c1.06 0 2.04-.294 2.89-.83ª.52.52 0 00.18-.59l-.6-1.52ª.5.5 0 00-.53-.3z”></path>
+
+      </svg>
+
+    </a>
+
+  </div>
+
+
+
+  <div class=”container”>
 
     <article>
+
       <h2>O que é Ozonioterapia?</h2>
-      <time datetime="2025-06-12">12 de Junho de 2025</time>
+
+      <time datetime=”2025-06-12”>12 de Junho de 2025</time>
+
       <p>A ozonioterapia é um tratamento que utiliza uma mistura de oxigênio e ozônio para estimular a circulação sanguínea, aumentar a oxigenação dos tecidos e fortalecer o sistema imunológico. É uma técnica natural que ajuda na recuperação de diversas doenças, melhora a qualidade de vida e acelera a cicatrização.</p>
+
+    </article>
+
+
+
+    ---
+
+
+
+    <section class=”services-section”>
+
+      <h2>Nossos Serviços em Ozonioterapia</h2>
+
+
+
+      <div class=”service-item”>
+
+        <h3>Ozonioterapia para Dores Crônicas</h3>
+
+        <p>Alivie dores articulares e musculares com a ação anti-inflamatória e analgésica do ozônio. Ideal para fibromialgia, artrose, hérnia de disco e outras condições.</p>
+
+        <ul>
+
+          <li>Redução da inflamação</li>
+
+          <li>Melhora da mobilidade</li>
+
+          <li>Diminuição do uso de medicamentos</li>
+
+        </ul>
+
+      </div>
+
+
+
+      <div class=”service-item”>
+
+        <h3>Cicatrização de Feridas Complexas</h3>
+
+        <p>Acelere a recuperação de úlceras de pressão, feridas diabéticas, queimaduras e outras lesões. O ozônio promove a oxigenação e a regeneração tecidual.</p>
+
+        <ul>
+
+          <li>Estímulo à formação de novos tecidos</li>
+
+          <li>Combate a infecções bacterianas e fúngicas</li>
+
+          <li>Minimização de cicatrizes</li>
+
+        </ul>
+
+      </div>
+
+
+
+      <div class=”service-item”>
+
+        <h3>Bem-Estar e Fortalecimento Imunológico</h3>
+
+        <p>Aumente sua energia, melhore a qualidade do sono e fortaleça suas defesas naturais com sessões de ozonioterapia. Ótimo para prevenção e manutenção da saúde.</p>
+
+        <ul>
+
+          <li>Otimização do sistema imunológico</li>
+
+          <li>Aumento da vitalidade e disposição</li>
+
+          <li>Auxílio na desintoxicação do organismo</li>
+
+        </ul>
+
+      </div>
+
+
+
+      <div class=”cta-button-wrapper”>
+
+        <a href=https://wa.me/5511913511919 target=”_blank” class=”cta-button”>Agende Sua Consulta via WhatsApp</a>
+
+      </div>
+
+    </section>
+
+
+
+    ---
+
+
+
+    <footer>
+
+      <p>&copy; 2025 Enfermeira Bianca Rodrigues Esteves. Todos os direitos reservados.</p>
+
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
